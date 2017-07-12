@@ -3,7 +3,7 @@ package trabalhofinal;
  * Created by FilipeBarros on 16/06/17.
  *  Classe responsável pelo cadastro e manutenção dos clientes
  */
-public class Cliente {
+public class Cliente implements java.io.Serializable {
 
     private String codigo;
     private String nome;

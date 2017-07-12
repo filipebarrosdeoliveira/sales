@@ -2,6 +2,7 @@ package trabalhofinal;
 
 
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -10,16 +11,17 @@ import java.util.Date;
  */
 
 
-public class Pedido   {
+public class Pedido  implements java.io.Serializable {
 
-  private Date dataPedido;
-  private String vendedor;
-  private Boolean status;
-  private String observacoes;
+  
   private String desconto;
   private String ipi;
   private String icms;
   private String quantidade;
+  private Cliente cliente;
+  private String codigo;
+  
+  private ArrayList <Produto> produtos = new ArrayList<>(); 
 
   public static void criarPedido (String args[]) {
 
@@ -34,39 +36,8 @@ public class Pedido   {
   }
 
 
-    public Date getDataPedido() {
-        return dataPedido;
-    }
+   
 
-    public void setDataPedido(Date dataPedido) {
-        this.dataPedido = dataPedido;
-    }
-
-    public String getVendedor() {
-
-      return vendedor;
-    }
-
-    public void setVendedor(String vendedor)
-    {
-        this.vendedor = vendedor;
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
-    public String getObservacoes() {
-        return observacoes;
-    }
-
-    public void setObservacoes(String observacoes) {
-        this.observacoes = observacoes;
-    }
 
     /**
      * @return the desconto
@@ -122,5 +93,47 @@ public class Pedido   {
      */
     public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
+    }
+
+    /**
+     * @return the cliente
+     */
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    /**
+     * @param cliente the cliente to set
+     */
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    /**
+     * @return the produtos
+     */
+    public ArrayList <Produto> getProdutos() {
+        return produtos;
+    }
+
+    /**
+     * @param produtos the produtos to set
+     */
+    public void setProdutos(ArrayList <Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    /**
+     * @return the codigo
+     */
+    public String getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 }
